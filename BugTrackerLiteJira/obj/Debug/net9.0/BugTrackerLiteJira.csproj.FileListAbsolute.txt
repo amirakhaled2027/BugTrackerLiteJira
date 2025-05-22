@@ -1,0 +1,14 @@
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\bin\Debug\net9.0\BugTrackerLiteJira.exe
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\bin\Debug\net9.0\BugTrackerLiteJira.deps.json
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\bin\Debug\net9.0\BugTrackerLiteJira.runtimeconfig.json
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\bin\Debug\net9.0\BugTrackerLiteJira.dll
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\bin\Debug\net9.0\BugTrackerLiteJira.pdb
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\BugTrackerLiteJira.GeneratedMSBuildEditorConfig.editorconfig
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\BugTrackerLiteJira.AssemblyInfoInputs.cache
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\BugTrackerLiteJira.AssemblyInfo.cs
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\BugTrackerLiteJira.csproj.CoreCompileInputs.cache
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\BugTrackerLiteJira.dll
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\refint\BugTrackerLiteJira.dll
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\BugTrackerLiteJira.pdb
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\BugTrackerLiteJira.genruntimeconfig.cache
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\ref\BugTrackerLiteJira.dll

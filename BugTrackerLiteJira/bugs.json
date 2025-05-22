@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "Title": "TestBug1",
+    "Description": "Description Bug 1",
+    "Priority": "high",
+    "Status": "closed",
+    "AssignedTo": "developer"
+  },
+  {
+    "id": 2,
+    "Title": "Test Bug 2",
+    "Description": "Descriotion Bug 2",
+    "Priority": "HIGH",
+    "Status": "open",
+    "AssignedTo": "Amira"
+  }
+]

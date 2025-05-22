@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "S:\\C#\\Projects\\BugTrackerLiteJira\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DDC1F46B-FBA8-4BDB-A3BF-6B193A8B5A55}|BugTracker.UnitTests\\BugTracker.UnitTests.csproj|s:\\c#\\projects\\bugtrackerlitejira\\bugtracker.unittests\\bugservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDC1F46B-FBA8-4BDB-A3BF-6B193A8B5A55}|BugTracker.UnitTests\\BugTracker.UnitTests.csproj|solutionrelative:bugtracker.unittests\\bugservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E75E6AA-8106-43EB-B0EA-E60F7422B3BB}|BugTrackerLiteJira\\BugTrackerLiteJira.csproj|s:\\c#\\projects\\bugtrackerlitejira\\bugtrackerlitejira\\services\\bugservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E75E6AA-8106-43EB-B0EA-E60F7422B3BB}|BugTrackerLiteJira\\BugTrackerLiteJira.csproj|solutionrelative:bugtrackerlitejira\\services\\bugservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BugService.cs",
+              "DocumentMoniker": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTrackerLiteJira\\Services\\BugService.cs",
+              "RelativeDocumentMoniker": "BugTrackerLiteJira\\Services\\BugService.cs",
+              "ToolTip": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTrackerLiteJira\\Services\\BugService.cs*",
+              "RelativeToolTip": "BugTrackerLiteJira\\Services\\BugService.cs*",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwDkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T17:57:20.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BugServiceTests.cs",
+              "DocumentMoniker": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTracker.UnitTests\\BugServiceTests.cs",
+              "RelativeDocumentMoniker": "BugTracker.UnitTests\\BugServiceTests.cs",
+              "ToolTip": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTracker.UnitTests\\BugServiceTests.cs*",
+              "RelativeToolTip": "BugTracker.UnitTests\\BugServiceTests.cs*",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAwwHkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T16:26:58.891Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
