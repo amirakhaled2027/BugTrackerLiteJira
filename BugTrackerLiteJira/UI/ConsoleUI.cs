@@ -1,4 +1,5 @@
 ﻿
+using System.Security.Cryptography.X509Certificates;
 using BugTrackerLiteJira.Services;
 
 namespace BugTrackerLiteJira.UI
@@ -6,21 +7,36 @@ namespace BugTrackerLiteJira.UI
     public class ConsoleUI
     {
         private readonly BugService bugService;
-        private readonly FileService fileService;
+        private readonly SaveLoadService saveLoadService;
 
-        public ConsoleUI(BugService bugService, FileService fileService)
+        public ConsoleUI(BugService bugService, SaveLoadService saveLoadService)
         {
             this.bugService = bugService;
-            this.fileService = fileService;
+            this.saveLoadService = saveLoadService;
         }
 
         public void Run()
         {
+            ShowWelcome();
+            bool running = true;
 
+            while (running)
+            {
+                ShowMainMenu();
+                string option = Console.ReadLine();
+                running = HandleMenuOptions(option);
+            }
+        }
+
+        public void ShowWelcome()
+        {
             Console.WriteLine("===================");
             Console.WriteLine("Bug Tracker");
             Console.WriteLine("===================\r\n");
+        }
 
+        public void ShowMainMenu()
+        {
             Console.WriteLine("\nMenu");
             Console.WriteLine("1.Add a New Bug");
             Console.WriteLine("2.List All Bugs");
@@ -29,75 +45,48 @@ namespace BugTrackerLiteJira.UI
             Console.WriteLine("5.Search/Filter Bugs");
             Console.WriteLine("6.Save/Load JSON File");
             Console.WriteLine("7.Exit");
-
-
-            bool running = true;
-
-            while (running)
-            {
-                string option = Console.ReadLine();
-
-                switch (option)
-                {
-                    case "1":
-                        bugService.AddBug();
-                        break;
-
-                    case "2":
-                        bugService.ListBugs();
-                        break;
-
-                    case "3":
-                        bugService.UpdateBug();
-                        break;
-
-                    case "4":
-                        bugService.DeleteBug();
-                        break;
-
-                    case "5":
-                        bugService.SearchBugs();
-                        break;
-
-                    case "6":
-                        Console.WriteLine("Do you want to:\n1.Save Data. \n2.Load Data.");
-                        string choice = Console.ReadLine();
-
-                        if (choice == "1")
-                        {
-                            fileService.SaveBugs(bugService.Bugs);
-                            Console.WriteLine("Bugs Saved Successfully!");
-                        }
-                        else if (choice == "2")
-                        {
-                            string path = "bugs.json";
-                            if (File.Exists(path))
-                            {
-                                var loadedBugs = fileService.LoadBugs();
-                                bugService.SetInitialBugs(loadedBugs);
-                                Console.WriteLine("Bugs loaded successfully!");
-                            }
-                            else
-                            {
-                                Console.WriteLine("No saved file found.");
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid choice. Please select 1 or 2.");
-                        }
-                        break;
-
-                    case "7":
-                        Console.WriteLine("Exiting...");
-                        running = false;
-                        break;
-
-                    default:
-                        Console.WriteLine("Please choose a valid option from 1 to 6!");
-                        break;
-                }
-            }
+            Console.WriteLine("Choose an option: ");
         }
+
+
+        private bool HandleMenuOptions(string option)
+        {
+            switch (option)
+            {
+                case "1":
+                    bugService.AddBug();
+                    break;
+
+                case "2":
+                    bugService.ListBugs();
+                    break;
+
+                case "3":
+                    bugService.UpdateBug();
+                    break;
+
+                case "4":
+                    bugService.DeleteBug();
+                    break;
+
+                case "5":
+                    bugService.SearchBugs();
+                    break;
+
+                case "6":
+                    saveLoadService.ShowSaveLoadMenu();
+                    break;
+
+                case "7":
+                    Console.WriteLine("Exiting...");
+                    return false;
+
+                default:
+                    Console.WriteLine("Please choose a valid option from 1 to 6!");
+                    break;
+            }
+            return true;
+        }
+
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using BugTrackerLiteJira.Services;
+﻿using BugTrackerLiteJira.Services;
 using BugTrackerLiteJira.UI;
 
 namespace BugTrackerLiteJira
@@ -10,11 +9,12 @@ namespace BugTrackerLiteJira
         {
             var bugService = new BugService();
             var fileService = new FileService();
+            var saveLoadService = new SaveLoadService();
             var bugs = fileService.LoadBugs();
 
             bugService.SetInitialBugs(bugs);
 
-            var ui = new ConsoleUI(bugService, fileService);
+            var ui = new ConsoleUI(bugService, saveLoadService);
             ui.Run();
 
         }

@@ -12,3 +12,4 @@ S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\refint\Bug
 S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\BugTrackerLiteJira.pdb
 S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\BugTrackerLiteJira.genruntimeconfig.cache
 S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\ref\BugTrackerLiteJira.dll
+S:\C#\Projects\BugTrackerLiteJira\BugTrackerLiteJira\obj\Debug\net9.0\BugTrackerLiteJira.sourcelink.json

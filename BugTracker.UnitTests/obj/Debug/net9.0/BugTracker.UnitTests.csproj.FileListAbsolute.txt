@@ -103,3 +103,4 @@ S:\C#\Projects\BugTrackerLiteJira\BugTracker.UnitTests\obj\Debug\net9.0\refint\B
 S:\C#\Projects\BugTrackerLiteJira\BugTracker.UnitTests\obj\Debug\net9.0\BugTracker.UnitTests.pdb
 S:\C#\Projects\BugTrackerLiteJira\BugTracker.UnitTests\obj\Debug\net9.0\BugTracker.UnitTests.genruntimeconfig.cache
 S:\C#\Projects\BugTrackerLiteJira\BugTracker.UnitTests\obj\Debug\net9.0\ref\BugTracker.UnitTests.dll
+S:\C#\Projects\BugTrackerLiteJira\BugTracker.UnitTests\obj\Debug\net9.0\BugTracker.UnitTests.sourcelink.json

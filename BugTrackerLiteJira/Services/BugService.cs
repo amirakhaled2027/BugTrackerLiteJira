@@ -144,13 +144,25 @@ namespace BugTrackerLiteJira.Services
         //Update Bug
         public void UpdateBug()
         {
-            Console.WriteLine("Write the Id of the bug you wanna update:");
-            int SearchId = int.Parse(Console.ReadLine());
+            int id;
+            while (true)
+            {
+                Console.WriteLine("Write the Id of the bug you wanna update:");
+                string SearchId = Console.ReadLine();
+
+                if (int.TryParse(SearchId, out id)) break;
+
+                Console.WriteLine("Invalid ID. Please enter a valid number!\n\n");
+            }
+
+            bool found = false;
 
             foreach (var bug in bugs)
             {
-                if (SearchId == bug.id)
+                if (id == bug.id)
                 {
+                    found = true;
+
                     if (bug.Status.Trim().ToLower() == "open")
                     {
                         bug.Status = "closed";
@@ -172,12 +184,15 @@ namespace BugTrackerLiteJira.Services
         //Delete Bug
         public void DeleteBug()
         {
-            Console.WriteLine("Delete Bug by Id:");
-
-            if (!int.TryParse(Console.ReadLine(), out int deletedId))
+            int deletedId;
+            while(true)
             {
-                Console.WriteLine("Invalid Input. Please enter a valid numeric Id");
-                return;
+                Console.WriteLine("Delete Bug by Id: ");
+                string IdInput = Console.ReadLine();
+
+                if (int.TryParse(IdInput, out deletedId)) break;
+
+                Console.WriteLine("Invalid Input. Please enter a valid numeric Id!\n\n");
             }
 
             var bugToDelete = bugs.FirstOrDefault(bug => bug.id == deletedId);
@@ -196,106 +211,125 @@ namespace BugTrackerLiteJira.Services
         //Search/Filter Bugs
         public void SearchBugs()
         {
-            Console.WriteLine("Search bugs by: \n(1) for status, \n(2) for priority, or \n(3) for assignee");
-            string search = Console.ReadLine();
-
-            switch (search)
+            string searchOption;
+            do
             {
-                case "1":
-                    Console.WriteLine("Search by status: Open/Closed");
-                    string searchStatus = Console.ReadLine().Trim().ToLower();
+                Console.WriteLine("Search bugs by: \n(1) for status, \n(2) for priority, or \n(3) for assignee");
+                searchOption = Console.ReadLine().Trim();
 
-                    if (searchStatus != "open" && searchStatus != "closed")
-                    {
-                        Console.WriteLine("Input is invalid. Please enter 'Open' or 'Closed'");
-                        break;
-                    }
+                if (searchOption != "1" && searchOption != "2" && searchOption != "3")
+                {
+                    Console.WriteLine("Please choose a valid option from 1 to 3\n\n");
+                }
+            }
+            while (searchOption != "1" && searchOption != "2" && searchOption != "3");
 
-                    bool foundStatus = false;
-                    foreach (var bug in bugs)
-                    {
-                        if (bug.Status.ToLower() == searchStatus)
-                        {
-                            foundStatus = true;
+            switch (searchOption)
+            {
+                case "1": SearchByStatus(); break;
+                case "2": SearchByPriority(); break;
+                case "3": SearchByAssignee(); break;
+            }
+        }
 
-                            Console.WriteLine($"ID: {bug.id}");
-                            Console.WriteLine($"Title: {bug.Title}");
-                            Console.WriteLine($"Description: {bug.Description}");
-                            Console.WriteLine($"Priority: {bug.Priority}");
-                            Console.WriteLine($"Status: {bug.Status}");
-                            Console.WriteLine($"Assigned To: {bug.AssignedTo}");
-                        }
-                    }
 
-                    if (!foundStatus)
-                    {
-                        Console.WriteLine("No bug found with that status");
-                    }
-                    break;
+        public void SearchByStatus()
+        {
+            string searchStatus;
+            do
+            {
+                Console.WriteLine("Search by status: Open/Closed");
+                searchStatus = Console.ReadLine().Trim().ToLower();
 
-                case "2":
-                    Console.WriteLine("Search by priority: High/Medium/Low");
-                    string searchPriority = Console.ReadLine().Trim().ToLower();
+                if (searchStatus != "open" && searchStatus != "closed")
+                {
+                    Console.WriteLine("Input is invalid. Please enter 'Open' or 'Closed'\n\n");
+                }
+            }
+            while (searchStatus != "open" && searchStatus != "closed");
 
-                    if (searchPriority != "high" && searchPriority != "medium" && searchPriority != "low")
-                    {
-                        Console.WriteLine("Invalid Input. Please enter 'High' or 'Medium' or 'Low'");
-                        break;
-                    }
+            bool foundStatus = false;
+            foreach (var bug in bugs)
+            {
+                if (bug.Status.ToLower() == searchStatus)
+                {
+                    foundStatus = true;
 
-                    bool foundPriority = false;
-                    foreach (var bug in bugs)
-                    {
-                        if (bug.Priority.ToLower() == searchPriority)
-                        {
-                            foundPriority = true;
-
-                            Console.WriteLine($"ID: {bug.id}");
-                            Console.WriteLine($"Title: {bug.Title}");
-                            Console.WriteLine($"Description: {bug.Description}");
-                            Console.WriteLine($"Priority: {bug.Priority}");
-                            Console.WriteLine($"Status: {bug.Status}");
-                        }
-                    }
-
-                    if (!foundPriority)
-                    {
-                        Console.WriteLine("No bug found with that priority");
-                    }
-                    break;
-
-                case "3":
-                    Console.WriteLine("Enter the name of the assignee you wanna search the bug by:");
-                    string searchAssignee = Console.ReadLine().Trim().ToLower();
-
-                    bool foundAssignee = false;
-
-                    foreach (var bug in bugs)
-                    {
-                        if (bug.AssignedTo.ToLower() == searchAssignee)
-                        {
-                            foundAssignee = true;
-
-                            Console.WriteLine($"ID: {bug.id}");
-                            Console.WriteLine($"Title: {bug.Title}");
-                            Console.WriteLine($"Description: {bug.Description}");
-                            Console.WriteLine($"Priority: {bug.Priority}");
-                            Console.WriteLine($"Status: {bug.Status}");
-                        }
-                    }
-
-                    if (!foundAssignee)
-                    {
-                        Console.WriteLine("No bug found with that Assignee");
-                    }
-                    break;
-
-                default:
-                    Console.WriteLine("Please choose a valid option from 1 to 3");
-                    break;
+                    DisplayBugs(bug);
+                }
             }
 
+            if (!foundStatus)
+            {
+                Console.WriteLine("No bug found with that status");
+            }
+        }
 
+
+        public void SearchByPriority() {
+
+            string searchPriority;
+            do
+            {
+                Console.WriteLine("Search by priority: High/Medium/Low");
+                searchPriority = Console.ReadLine().Trim().ToLower();
+
+                if (searchPriority != "high" && searchPriority != "medium" && searchPriority != "low")
+                {
+                    Console.WriteLine("Invalid Input. Please enter 'High' or 'Medium' or 'Low'\n\n");
+                }
+            }
+            while (searchPriority != "high" && searchPriority != "medium" && searchPriority != "low");
+             
+            bool foundPriority = false;
+            foreach (var bug in bugs)
+            {
+                if (bug.Priority.ToLower() == searchPriority)
+                {
+                    foundPriority = true;
+
+                    DisplayBugs(bug);
+                }
+            }
+
+            if (!foundPriority)
+            {
+                Console.WriteLine("No bug found with that priority");
+            }
+        }
+
+        public void SearchByAssignee() {
+            //Console.WriteLine("Enter the name of the assignee you wanna search the bug by:");
+            //string searchAssignee = Console.ReadLine().Trim().ToLower();
+
+            string searchAssignee = PromptForRequiredInput("The name of the assignee to search for:").ToLower();
+
+            bool foundAssignee = false;
+
+            foreach (var bug in bugs)
+            {
+                if (bug.AssignedTo.ToLower() == searchAssignee)
+                {
+                    foundAssignee = true;
+
+                    DisplayBugs(bug);
+                }
+            }
+
+            if (!foundAssignee)
+            {
+                Console.WriteLine("No bug found with that Assignee");
+            }
+        }
+
+        private void DisplayBugs(Bug bug)
+        {
+            Console.WriteLine($"ID: {bug.id}");
+            Console.WriteLine($"Title: {bug.Title}");
+            Console.WriteLine($"Description: {bug.Description}");
+            Console.WriteLine($"Priority: {bug.Priority}");
+            Console.WriteLine($"Status: {bug.Status}");
+            Console.WriteLine($"Assigned To: {bug.AssignedTo}");
         }
     }
 }
