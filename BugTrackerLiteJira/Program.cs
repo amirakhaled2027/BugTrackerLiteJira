@@ -9,7 +9,7 @@ namespace BugTrackerLiteJira
         {
             var bugService = new BugService();
             var fileService = new FileService();
-            var saveLoadService = new SaveLoadService();
+            var saveLoadService = new SaveLoadService(bugService, fileService);
             var bugs = fileService.LoadBugs();
 
             bugService.SetInitialBugs(bugs);

@@ -7,16 +7,8 @@
       "RelativeMoniker": "D:0:0:{3E75E6AA-8106-43EB-B0EA-E60F7422B3BB}|BugTrackerLiteJira\\BugTrackerLiteJira.csproj|solutionrelative:bugtrackerlitejira\\models\\bug.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E75E6AA-8106-43EB-B0EA-E60F7422B3BB}|BugTrackerLiteJira\\BugTrackerLiteJira.csproj|s:\\c#\\projects\\bugtrackerlitejira\\bugtrackerlitejira\\models\\bugenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E75E6AA-8106-43EB-B0EA-E60F7422B3BB}|BugTrackerLiteJira\\BugTrackerLiteJira.csproj|solutionrelative:bugtrackerlitejira\\models\\bugenums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3E75E6AA-8106-43EB-B0EA-E60F7422B3BB}|BugTrackerLiteJira\\BugTrackerLiteJira.csproj|s:\\c#\\projects\\bugtrackerlitejira\\bugtrackerlitejira\\services\\bugservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E75E6AA-8106-43EB-B0EA-E60F7422B3BB}|BugTrackerLiteJira\\BugTrackerLiteJira.csproj|solutionrelative:bugtrackerlitejira\\services\\bugservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3E75E6AA-8106-43EB-B0EA-E60F7422B3BB}|BugTrackerLiteJira\\BugTrackerLiteJira.csproj|s:\\c#\\projects\\bugtrackerlitejira\\bugtrackerlitejira\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E75E6AA-8106-43EB-B0EA-E60F7422B3BB}|BugTrackerLiteJira\\BugTrackerLiteJira.csproj|solutionrelative:bugtrackerlitejira\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +18,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,50 +32,20 @@
               "RelativeDocumentMoniker": "BugTrackerLiteJira\\Models\\Bug.cs",
               "ToolTip": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTrackerLiteJira\\Models\\Bug.cs",
               "RelativeToolTip": "BugTrackerLiteJira\\Models\\Bug.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T15:30:12.522Z",
+              "WhenOpened": "2025-05-24T16:39:09.333Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BugEnums.cs",
-              "DocumentMoniker": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTrackerLiteJira\\Models\\BugEnums.cs",
-              "RelativeDocumentMoniker": "BugTrackerLiteJira\\Models\\BugEnums.cs",
-              "ToolTip": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTrackerLiteJira\\Models\\BugEnums.cs",
-              "RelativeToolTip": "BugTrackerLiteJira\\Models\\BugEnums.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T16:06:13.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTrackerLiteJira\\Program.cs",
-              "RelativeDocumentMoniker": "BugTrackerLiteJira\\Program.cs",
-              "ToolTip": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTrackerLiteJira\\Program.cs",
-              "RelativeToolTip": "BugTrackerLiteJira\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T20:35:30.581Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "BugService.cs",
               "DocumentMoniker": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTrackerLiteJira\\Services\\BugService.cs",
               "RelativeDocumentMoniker": "BugTrackerLiteJira\\Services\\BugService.cs",
               "ToolTip": "S:\\C#\\Projects\\BugTrackerLiteJira\\BugTrackerLiteJira\\Services\\BugService.cs",
               "RelativeToolTip": "BugTrackerLiteJira\\Services\\BugService.cs",
-              "ViewState": "AgIAAAgBAAAAAAAAAAAswBoBAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAnwJQAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T20:09:12.215Z",
               "EditorCaption": ""

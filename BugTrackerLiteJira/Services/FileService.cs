@@ -1,5 +1,6 @@
 ﻿
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using BugTrackerLiteJira.Model;
 
 namespace BugTrackerLiteJira.Services
@@ -18,7 +19,14 @@ namespace BugTrackerLiteJira.Services
                 return new List<Bug>();
 
             string json = File.ReadAllText(filePath);
-            return JsonSerializer.Deserialize<List<Bug>>(json) ?? new List<Bug>();
+
+            var options = new JsonSerializerOptions
+            {
+                Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) },
+                PropertyNameCaseInsensitive = true
+            };
+
+            return JsonSerializer.Deserialize<List<Bug>>(json, options) ?? new List<Bug>();
         }
 
         //Saving Data to JSON (serlialization)

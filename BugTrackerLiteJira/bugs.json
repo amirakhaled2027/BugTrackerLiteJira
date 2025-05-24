@@ -3,16 +3,46 @@
     "id": 1,
     "Title": "TestBug1",
     "Description": "Description Bug 1",
-    "Priority": "high",
-    "Status": "closed",
-    "AssignedTo": "developer"
+    "Priority": 2,
+    "Status": 1,
+    "AssignedTo": "developer",
+    "DateReported": "2025-05-24T22:23:41.8366537+03:00",
+    "ReporterName": "Unknown",
+    "Comments": []
   },
   {
     "id": 2,
     "Title": "Test Bug 2",
     "Description": "Descriotion Bug 2",
-    "Priority": "HIGH",
-    "Status": "open",
-    "AssignedTo": "Amira"
+    "Priority": 2,
+    "Status": 0,
+    "AssignedTo": "Amira",
+    "DateReported": "2025-05-24T22:23:41.8566103+03:00",
+    "ReporterName": "Unknown",
+    "Comments": []
+  },
+  {
+    "id": 3,
+    "Title": "TestBug3",
+    "Description": "Description Bug 3 ",
+    "Priority": 0,
+    "Status": 1,
+    "AssignedTo": "Dev",
+    "DateReported": "2025-05-24T22:23:41.8566372+03:00",
+    "ReporterName": "Unknown",
+    "Comments": []
+  },
+  {
+    "id": 4,
+    "Title": "Test Bug 4",
+    "Description": "Description Bug 4",
+    "Priority": 1,
+    "Status": 0,
+    "AssignedTo": "developer",
+    "DateReported": "2025-05-24T22:24:58.3511376+03:00",
+    "ReporterName": "Amira",
+    "Comments": [
+      "testing adding the metadata"
+    ]
   }
 ]

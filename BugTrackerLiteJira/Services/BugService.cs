@@ -1,4 +1,5 @@
 ﻿using BugTrackerLiteJira.Model;
+using static BugTrackerLiteJira.Models.BugEnums;
 
 namespace BugTrackerLiteJira.Services
 {
@@ -38,13 +39,15 @@ namespace BugTrackerLiteJira.Services
                 return;
             }
 
-            if (bug.Status.Trim().ToLower() == "open")
+            //if (bug.Status.Trim().ToLower() == "open")
+            if (bug.Status == Status.Open)
             {
-                bug.Status = "closed";
+                bug.Status = Status.Closed;
             }
-            else if (bug.Status.Trim().ToLower() == "closed")
+            //else if (bug.Status.Trim().ToLower() == "closed")
+            else if (bug.Status == Status.Closed)
             {
-                bug.Status = "open";
+                bug.Status = Status.Open;
             }
         }
 
@@ -92,16 +95,47 @@ namespace BugTrackerLiteJira.Services
 
             string newDescription = PromptForRequiredInput("Description");
 
-            Console.WriteLine("Priority: High/Medium/Low");
-            string newPriority = PromptForRequiredInput("Priority");
+            DateTime newDateReported = DateTime.Now;
 
-            Console.WriteLine("Status: Open/Closed");
-            string newStatus = PromptForRequiredInput("Status").Trim().ToLower();
-            if (newStatus != "open" && newStatus != "closed")
+            string newReporterName = PromptForRequiredInput("ReporterName");
+
+            string newComments= PromptForRequiredInput("Initial Comment (optional)");
+
+
+
+            //Console.WriteLine("Priority: High/Medium/Low");
+            //Priority newPriority = PromptForRequiredInput("Priority");
+
+            //Console.WriteLine("Status: Open/Closed");
+            //Status newStatus = PromptForRequiredInput("Status").Trim().ToLower();
+            //if (newStatus != "open" && newStatus != "closed")
+            //{
+            //    Console.WriteLine("Status must be 'Open or 'Closed'");
+            //    return;
+            //}
+
+            Priority newPriority;
+            while (true)
             {
-                Console.WriteLine("Status must be 'Open or 'Closed'");
-                return;
+                Console.WriteLine("Priority (High/Medium/Low):");
+                string input = Console.ReadLine();
+
+                if (Enum.TryParse(input, true, out newPriority)) break;
+
+                Console.WriteLine("Invalid input. Please enter High, Medium, or Low.\n");
             }
+
+            Status newStatus;
+            while (true)
+            {
+                Console.WriteLine("Status (Open/Closed):");
+                string input = Console.ReadLine();
+
+                if (Enum.TryParse(input, true, out newStatus)) break;
+
+                Console.WriteLine("Invalid input. Please enter Open or Closed.\n");
+            }
+
 
             string newAssignedTo = PromptForRequiredInput("Assigned To");
 
@@ -110,6 +144,9 @@ namespace BugTrackerLiteJira.Services
                 id = newId,
                 Title = newTitle,
                 Description = newDescription,
+                DateReported = DateTime.Now,
+                ReporterName = newReporterName,
+                Comments = string.IsNullOrWhiteSpace(newComments) ? new List<string>() : new List<string> { newComments },
                 Priority = newPriority,
                 Status = newStatus,
                 AssignedTo = newAssignedTo
@@ -130,12 +167,7 @@ namespace BugTrackerLiteJira.Services
             foreach (var bug in bugs)
             {
                 Console.WriteLine($"Bug No.{index++}");
-                Console.WriteLine($"ID: {bug.id}");
-                Console.WriteLine($"Title: {bug.Title}");
-                Console.WriteLine($"Description: {bug.Description}");
-                Console.WriteLine($"Priority: {bug.Priority}");
-                Console.WriteLine($"Status: {bug.Status}");
-                Console.WriteLine($"Assigned To: {bug.AssignedTo}");
+                DisplayBugs(bug);
 
                 Console.WriteLine($"----------------------");
             }
@@ -163,14 +195,14 @@ namespace BugTrackerLiteJira.Services
                 {
                     found = true;
 
-                    if (bug.Status.Trim().ToLower() == "open")
+                    if (bug.Status == Status.Open)
                     {
-                        bug.Status = "closed";
+                        bug.Status = Status.Closed;
                         Console.WriteLine($"Bug No. {bug.id} has been updated to Closed!");
                     }
-                    else if (bug.Status.Trim().ToLower() == "closed")
+                    else if (bug.Status == Status.Closed)
                     {
-                        bug.Status = "open";
+                        bug.Status = Status.Open;
                         Console.WriteLine($"Bug No. {bug.id} has been updated to Open!");
                     }
                     else
@@ -251,7 +283,7 @@ namespace BugTrackerLiteJira.Services
             bool foundStatus = false;
             foreach (var bug in bugs)
             {
-                if (bug.Status.ToLower() == searchStatus)
+                if (bug.Status.ToString().ToLower() == searchStatus)
                 {
                     foundStatus = true;
 
@@ -284,7 +316,7 @@ namespace BugTrackerLiteJira.Services
             bool foundPriority = false;
             foreach (var bug in bugs)
             {
-                if (bug.Priority.ToLower() == searchPriority)
+                if (bug.Priority.ToString().ToLower() == searchPriority)
                 {
                     foundPriority = true;
 
@@ -327,8 +359,11 @@ namespace BugTrackerLiteJira.Services
             Console.WriteLine($"ID: {bug.id}");
             Console.WriteLine($"Title: {bug.Title}");
             Console.WriteLine($"Description: {bug.Description}");
-            Console.WriteLine($"Priority: {bug.Priority}");
-            Console.WriteLine($"Status: {bug.Status}");
+            Console.WriteLine($"DateReported: {bug.DateReported}");
+            Console.WriteLine($"ReporterName: {bug.ReporterName}");
+            Console.WriteLine($"Comments : {bug.Comments}");
+            Console.WriteLine($"Priority: {bug.Priority.ToString()}");
+            Console.WriteLine($"Status: {bug.Status.ToString()}");
             Console.WriteLine($"Assigned To: {bug.AssignedTo}");
         }
     }

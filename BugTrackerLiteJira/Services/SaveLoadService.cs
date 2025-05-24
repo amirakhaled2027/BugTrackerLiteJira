@@ -7,7 +7,7 @@ namespace BugTrackerLiteJira.Services
         private readonly BugService bugService;
         private readonly FileService fileService;
 
-        public SaveLoadService()
+        public SaveLoadService(BugService bugService, FileService fileService)
         {
             this.bugService = bugService;
             this.fileService = fileService; 
